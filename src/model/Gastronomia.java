@@ -16,6 +16,14 @@ public class Gastronomia extends Servicio{
         this.diaSemDesc = diaSemDesc;
     }
 
+    public Gastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc, LocalDate dia) {
+        super(codServicio, porcentajeDescuento, enPromocion, dia);
+        this.gastronomia = gastronomia;
+        this.precio = precio;
+        this.diaSemDesc = diaSemDesc;
+        this.dia = dia;
+    }
+
     @Override
     public double calcularPrecioFinal(LocalDate dia) {
         double precioFinal = this.precio;

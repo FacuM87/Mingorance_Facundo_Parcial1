@@ -57,7 +57,16 @@ public class Sistema {
     public boolean agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc, LocalDate dia) throws Exception {
         validarCodigoServicioUnico(codServicio);
         
+        
         Servicio s1 = new Gastronomia(codServicio, porcentajeDescuento, enPromocion, gastronomia, precio, diaSemDesc, dia);
+        this.lstServicio.add(s1);
+        return true;
+    }
+    
+    public boolean agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc) throws Exception {
+        validarCodigoServicioUnico(codServicio);
+        
+        Servicio s1 = new Gastronomia(codServicio, porcentajeDescuento, enPromocion, gastronomia, precio, diaSemDesc);
         this.lstServicio.add(s1);
         return true;
     }
@@ -66,6 +75,14 @@ public class Sistema {
         validarCodigoServicioUnico(codServicio);
 
         Servicio s1 = new Hospedaje(codServicio, porcentajeDescuento, enPromocion, hospedaje, precioPorNoche, dia);
+        this.lstServicio.add(s1);
+        return true;
+    }
+
+    public boolean agregarHospedaje(String codServicio, double porcentajeDescuento, boolean enPromocion, String hospedaje, double precioPorNoche) throws Exception {
+        validarCodigoServicioUnico(codServicio);
+
+        Servicio s1 = new Hospedaje(codServicio, porcentajeDescuento, enPromocion, hospedaje, precioPorNoche);
         this.lstServicio.add(s1);
         return true;
     }
