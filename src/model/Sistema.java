@@ -38,7 +38,19 @@ public class Sistema {
        List<Servicio> lstRetorno = new ArrayList<>();
        
        for (Servicio s : this.lstServicio){
-           
+           if(s.isEnPromocion() == enPromocion){
+               if (s instanceof Gastronomia gastronomia){
+                   if (dia.getDayOfWeek().getValue() == gastronomia.getDiaSemDesc()){
+                       lstRetorno.add(s);
+                   }
+               }
+               
+               if (s instanceof Hospedaje){
+                   if (dia.getDayOfWeek().getValue() <= 5){
+                       lstRetorno.add(s);
+                   }
+               }
+            } 
        }
        
        return lstRetorno;

@@ -40,6 +40,11 @@ public class Gastronomia extends Servicio{
     public String toString() {
         return "Gastronomia{" + "gastronomia=" + gastronomia + ", precio=" + precio + ", diaSemDesc=" + diaSemDesc + '}';
     }
+
+    public int getDiaSemDesc() {
+        return diaSemDesc;
+    }
+    
     
     
 }
