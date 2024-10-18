@@ -50,7 +50,7 @@ El proyecto está compuesto por las siguientes clases y subclases:
 ### 1. **Servicio** (Clase Abstracta)
 
 - **Atributos**:
-    - `codServicio`: Código del servicio (6 caracteres, con validación).
+    - `codServicio`: Código del servicio (6 caracteres, con validación). Arroja una excepción si el código es distinto de 6 caracteres.
     - `porcentajeDescuento`: Porcentaje de descuento aplicable al servicio.
     - `enPromocion`: Indica si el servicio está en promoción.
     - `dia`: Indica el dia de reserva del servicio.
@@ -81,12 +81,12 @@ El proyecto está compuesto por las siguientes clases y subclases:
 - **Atributos**:
     - `lstServicio`: Lista de servicios disponibles (hospedaje y gastronomía).
 - **Métodos**:
-    - `traerServicio(String codServicio)`: Retorna un servicio específico según su código.
+    - `traerServicio(String codServicio)`: Retorna un servicio específico según su código. Arroja una excepción si el código es inexistente.
     - `traerServicio(boolean enPromocion)`: Retorna una lista de servicios que están en promoción.
     - `traerServicio(boolean enPromocion, LocalDate dia)`: Retorna una lista de servicios en promoción y que apliquen
       descuentos según la fecha.
     - `validarCodigoServicioUnico(String codServicio)`: Valida que el codigo de servicio no se encuentre repetido.
-    - `agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc)`: Agrega un servicio de gastronomía al sistema sin el dia de reserva.
-    - `agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc, LocalDate dia)`: Agrega un servicio de gastronomía al sistema con el dia de reserva.
+    - `agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc)`: Agrega un servicio de gastronomía al sistema sin el dia de reserva. Arroja una excepción si el código ya se encuentra ingresado.
+    - `agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc, LocalDate dia)`: Agrega un servicio de gastronomía al sistema con el dia de reserva. Arroja una excepción si el código ya se encuentra ingresado.
     - `agregarHospedaje(String codServicio, double porcentajeDescuento, boolean enPromocion, String hospedaje, double precioPorNoche)`: Agrega un servicio de hospedaje al sistema sin el dia de reserva.
-    - `agregarHospedaje(String codServicio, double porcentajeDescuento, boolean enPromocion, String hospedaje, double precioPorNoche, LocalDate dia)`: Agrega un servicio de hospedaje al sistema con el dia de reserva.
+    - `agregarHospedaje(String codServicio, double porcentajeDescuento, boolean enPromocion, String hospedaje, double precioPorNoche, LocalDate dia)`: Agrega un servicio de hospedaje al sistema con el dia de reserva. Arroja una excepción si el código ya se encuentra ingresado.
