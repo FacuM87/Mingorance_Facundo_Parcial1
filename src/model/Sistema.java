@@ -35,15 +35,13 @@ public class Sistema {
     }
 
     public List<Servicio> traerServicio(boolean enPromocion, LocalDate dia) {
-        List<Servicio> lstRetorno = new ArrayList<>();
-
-        for (Servicio s : this.lstServicio) {
-            if (enPromocion) {
-
-            }
-        }
-
-        return lstRetorno;
+       List<Servicio> lstRetorno = new ArrayList<>();
+       
+       for (Servicio s : this.lstServicio){
+           
+       }
+       
+       return lstRetorno;
     }
 
     private void validarCodigoServicioUnico(String codServicio) throws Exception {
@@ -56,16 +54,15 @@ public class Sistema {
 
     public boolean agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc, LocalDate dia) throws Exception {
         validarCodigoServicioUnico(codServicio);
-        
-        
+
         Servicio s1 = new Gastronomia(codServicio, porcentajeDescuento, enPromocion, gastronomia, precio, diaSemDesc, dia);
         this.lstServicio.add(s1);
         return true;
     }
-    
+
     public boolean agregarGastronomia(String codServicio, double porcentajeDescuento, boolean enPromocion, String gastronomia, double precio, int diaSemDesc) throws Exception {
         validarCodigoServicioUnico(codServicio);
-        
+
         Servicio s1 = new Gastronomia(codServicio, porcentajeDescuento, enPromocion, gastronomia, precio, diaSemDesc);
         this.lstServicio.add(s1);
         return true;
@@ -92,5 +89,4 @@ public class Sistema {
         return "Sistema{" + "lstServicio=" + lstServicio + '}';
     }
 
-    
 }
